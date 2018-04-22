@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  mos:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: 0x1d/mos
+    ports:
+      - "1992:1992"
+    devices:
+      - "/dev/ttyUSB0:/dev/ttyUSB0"
+#    restart: always
+    command: "/root/.mos/bin/mos --http-addr 0.0.0.0:1992 ui"
