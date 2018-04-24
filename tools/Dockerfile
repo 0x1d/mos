@@ -28,7 +28,8 @@ RUN apt-get install -y docker-ce
 EXPOSE 1992
 #ADD $PWD ./app
 #WORKDIR /app
-RUN mkdir -p /root/.mos/apps-2.1/app
+#RUN mkdir -p /root/.mos/apps-2.1/app
+RUN git clone https://github.com/cesanta/mongoose-os.git
 WORKDIR /root/.mos/apps-2.1
-ADD $PWD ./app
+ADD $PWD app
 #CMD ["/root/.mos/bin/mos", "--http-addr","0.0.0.0:1992","ui"]
